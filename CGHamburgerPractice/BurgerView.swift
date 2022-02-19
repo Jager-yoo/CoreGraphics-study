@@ -121,20 +121,22 @@ final class BurgerView: UIView {
         sriracha.close()
         
         // 위 번 그리기
-        let topBunRectOrigin = CGPoint(x: width * 0.12, y: height * 0.33)
-        let topBunRectSize = CGSize(width: width * 0.76, height: height * 0.1)
+        let topBunStartPoint = CGPoint(x: width * 0.12, y: height * 0.43)
+        let topBunEndPoint = CGPoint(x: width * 0.88, y: height * 0.43)
         
-        let topBun = UIBezierPath(
-            roundedRect: CGRect(
-                origin: topBunRectOrigin,
-                size: topBunRectSize
-            ),
-            byRoundingCorners: [.topLeft, .topRight],
-            cornerRadii: CGSize(width: 500, height: 500)
-        )
+        let topBun = UIBezierPath()
         topBun.lineWidth = lineWidth
+        topBun.lineJoinStyle = .round
+        topBun.move(to: topBunStartPoint)
+        topBun.addCurve(to: topBunEndPoint,
+                        controlPoint1: CGPoint(x: width * 0.15, y: height * 0.25),
+                        controlPoint2: CGPoint(x: width * 0.85, y: height * 0.25)
+        )
+        topBun.addLine(to: topBunStartPoint)
+        topBun.lineWidth = lineWidth
+        topBun.lineJoinStyle = .round
         bunStrokeColor.setStroke()
+        topBun.close() // close 위치를 stroke 위로 올리면, 선분들의 joint 가 잘 형성됨
         topBun.stroke()
-        topBun.close()
     }
 }
