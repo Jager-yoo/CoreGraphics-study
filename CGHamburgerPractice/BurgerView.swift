@@ -11,7 +11,8 @@ import UIKit
 final class BurgerView: UIView {
     
     @IBInspectable private var lineWidth: CGFloat = 10
-    @IBInspectable private var strokeColor: UIColor = .systemBrown
+    @IBInspectable private var strokeColor: UIColor = .brown
+    @IBInspectable private var lettuceStrokeColor: UIColor = .green
     @IBInspectable private var fillColor: UIColor = .systemBrown
     @IBInspectable private var cornerRadius: CGFloat = 5
     
@@ -22,10 +23,15 @@ final class BurgerView: UIView {
         
         let height = bounds.height
         let width = bounds.width
+        
         let bottomBunOrigin = CGPoint(x: width * 0.15, y: height * 0.65)
         let bottomBunSize = CGSize(width: width * 0.7, height: height * 0.05)
+        
         let meatPattyStartPoint = CGPoint(x: width * 0.12, y: height * 0.6)
         let meatPattyEndPoint = CGPoint(x: width * 0.88, y: height * 0.6)
+        
+        let lettuceStartPoint = CGPoint(x: width * 0.13, y: height * 0.55)
+        let lettuceEndPoint = CGPoint(x: width * 0.87, y: height * 0.55)
         
         let bottomBun = UIBezierPath(
             roundedRect: CGRect(
@@ -47,6 +53,18 @@ final class BurgerView: UIView {
         strokeColor.setStroke()
         meatPatty.stroke()
         meatPatty.close()
+        
+        let lettuce = UIBezierPath()
+        lettuce.lineWidth = 20
+        lettuce.lineCapStyle = .round
+        lettuce.move(to: lettuceStartPoint)
+        lettuce.addCurve(
+            to: CGPoint(x: lettuceStartPoint.x + 80, y: lettuceStartPoint.y),
+            controlPoint1: CGPoint(x: lettuceStartPoint.x + 40, y: lettuceStartPoint.y + 30),
+            controlPoint2: CGPoint(x: lettuceStartPoint.x + 40, y: lettuceStartPoint.y - 30)
+        )
+        lettuceStrokeColor.setStroke()
+        lettuce.stroke()
+        lettuce.close()
     }
-    
 }
