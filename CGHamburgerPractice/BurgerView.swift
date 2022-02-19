@@ -13,6 +13,7 @@ final class BurgerView: UIView {
     @IBInspectable private var lineWidth: CGFloat = 10
     @IBInspectable private var bunStrokeColor: UIColor = .brown
     @IBInspectable private var lettuceStrokeColor: UIColor = .green
+    @IBInspectable private var srirachaStrokeColor: UIColor = .orange
     @IBInspectable private var tomatofillColor: UIColor = .red
     @IBInspectable private var cornerRadius: CGFloat = 5
     
@@ -100,5 +101,23 @@ final class BurgerView: UIView {
         tomatofillColor.setFill()
         tomatoTwo.fill()
         tomatoTwo.close()
+        
+        // 스리라차 소스 그리기
+        let srirachaStartPoint = CGPoint(x: width * 0.12, y: height * 0.45)
+        let srirachaEndPoint = CGPoint(x: width * 0.16, y: height * 0.47)
+        
+        let sriracha = UIBezierPath()
+        sriracha.lineWidth = 10
+        sriracha.lineCapStyle = .square
+        
+        var srirachaGap: CGFloat = 0
+        for _ in 1...13 {
+            sriracha.move(to: CGPoint(x: srirachaStartPoint.x + srirachaGap, y: srirachaStartPoint.y))
+            sriracha.addLine(to: CGPoint(x: srirachaEndPoint.x + srirachaGap, y: srirachaEndPoint.y))
+            srirachaGap += 25
+        }
+        srirachaStrokeColor.setStroke()
+        sriracha.stroke()
+        sriracha.close()
     }
 }
