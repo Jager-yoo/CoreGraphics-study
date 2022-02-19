@@ -53,7 +53,7 @@ final class BurgerView: UIView {
         meatPatty.stroke()
         meatPatty.close()
         
-        // 양상추 그리기
+        // 양상추 4번 그리기
         let lettuceStartPoint = CGPoint(x: width * 0.12, y: height * 0.55)
         
         let lettuce = UIBezierPath()
@@ -74,18 +74,31 @@ final class BurgerView: UIView {
         lettuce.stroke()
         lettuce.close()
         
-        // 토마토 그리기
-        let tomatoOrigin = CGPoint(x: width * 0.13, y: height * 0.49)
+        // 좌측 토마토 그리기
+        let tomatoOneOrigin = CGPoint(x: width * 0.13, y: height * 0.49)
         let tomatoSize = CGSize(width: width * 0.35, height: height * 0.03)
         
-        let tomato = UIBezierPath(
+        let tomatoOne = UIBezierPath(
             rect: CGRect(
-                origin: tomatoOrigin,
+                origin: tomatoOneOrigin,
                 size: tomatoSize
             )
         )
         tomatofillColor.setFill()
-        tomato.fill()
-        tomato.close()
+        tomatoOne.fill()
+        tomatoOne.close()
+        
+        // 우측 토마토 그리기
+        let tomatoTwoOrigin = CGPoint(x: width * 0.52, y: height * 0.49)
+        
+        let tomatoTwo = UIBezierPath(
+            rect: CGRect(
+                origin: tomatoTwoOrigin,
+                size: tomatoSize
+            )
+        )
+        tomatofillColor.setFill()
+        tomatoTwo.fill()
+        tomatoTwo.close()
     }
 }
