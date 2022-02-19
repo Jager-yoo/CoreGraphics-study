@@ -13,6 +13,7 @@
 		C13C401E27C0F20F00CC2EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13C401C27C0F20F00CC2EF4 /* Main.storyboard */; };
 		C13C402027C0F20F00CC2EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13C401F27C0F20F00CC2EF4 /* Assets.xcassets */; };
 		C13C402327C0F20F00CC2EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13C402127C0F20F00CC2EF4 /* LaunchScreen.storyboard */; };
+		C13C402B27C0F28100CC2EF4 /* BurgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13C402A27C0F28100CC2EF4 /* BurgerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C13C401F27C0F20F00CC2EF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C13C402227C0F20F00CC2EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C13C402427C0F20F00CC2EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13C402A27C0F28100CC2EF4 /* BurgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +58,11 @@
 		C13C401527C0F20F00CC2EF4 /* CGHamburgerPractice */ = {
 			isa = PBXGroup;
 			children = (
+				C13C402A27C0F28100CC2EF4 /* BurgerView.swift */,
+				C13C401C27C0F20F00CC2EF4 /* Main.storyboard */,
+				C13C401A27C0F20F00CC2EF4 /* ViewController.swift */,
 				C13C401627C0F20F00CC2EF4 /* AppDelegate.swift */,
 				C13C401827C0F20F00CC2EF4 /* SceneDelegate.swift */,
-				C13C401A27C0F20F00CC2EF4 /* ViewController.swift */,
-				C13C401C27C0F20F00CC2EF4 /* Main.storyboard */,
 				C13C401F27C0F20F00CC2EF4 /* Assets.xcassets */,
 				C13C402127C0F20F00CC2EF4 /* LaunchScreen.storyboard */,
 				C13C402427C0F20F00CC2EF4 /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13C401B27C0F20F00CC2EF4 /* ViewController.swift in Sources */,
+				C13C402B27C0F28100CC2EF4 /* BurgerView.swift in Sources */,
 				C13C401727C0F20F00CC2EF4 /* AppDelegate.swift in Sources */,
 				C13C401927C0F20F00CC2EF4 /* SceneDelegate.swift in Sources */,
 			);
