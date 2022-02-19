@@ -26,8 +26,8 @@ final class BurgerView: UIView {
         let width = bounds.width
         
         // 아래 번 그리기
-        let bottomBunOrigin = CGPoint(x: width * 0.15, y: height * 0.64)
-        let bottomBunSize = CGSize(width: width * 0.7, height: height * 0.05)
+        let bottomBunOrigin = CGPoint(x: width * 0.12, y: height * 0.64)
+        let bottomBunSize = CGSize(width: width * 0.76, height: height * 0.05)
         
         let bottomBun = UIBezierPath(
             roundedRect: CGRect(
@@ -62,8 +62,8 @@ final class BurgerView: UIView {
         lettuce.lineCapStyle = .round
         
         var lettuceGap: CGFloat = 0
+        lettuce.move(to: lettuceStartPoint)
         for _ in 1...4 {
-            lettuce.move(to: CGPoint(x: lettuceStartPoint.x + lettuceGap, y: lettuceStartPoint.y))
             lettuce.addCurve(
                 to: CGPoint(x: lettuceStartPoint.x + 80 + lettuceGap, y: lettuceStartPoint.y),
                 controlPoint1: CGPoint(x: lettuceStartPoint.x + 40 + lettuceGap, y: lettuceStartPoint.y + 30),
@@ -119,5 +119,22 @@ final class BurgerView: UIView {
         srirachaStrokeColor.setStroke()
         sriracha.stroke()
         sriracha.close()
+        
+        // 위 번 그리기
+        let topBunRectOrigin = CGPoint(x: width * 0.12, y: height * 0.33)
+        let topBunRectSize = CGSize(width: width * 0.76, height: height * 0.1)
+        
+        let topBun = UIBezierPath(
+            roundedRect: CGRect(
+                origin: topBunRectOrigin,
+                size: topBunRectSize
+            ),
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: 500, height: 500)
+        )
+        topBun.lineWidth = lineWidth
+        bunStrokeColor.setStroke()
+        topBun.stroke()
+        topBun.close()
     }
 }
